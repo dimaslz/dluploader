@@ -1,0 +1,38 @@
+<div class="droppable-zone" ng-class="{ active: showDroppable }">
+  <span class="fileUpload">
+    <i class="fa fa-cloud-upload fa-2x"></i>
+    <span>Click here or select files to upload</span><span ng-if="droppable">or drag and drop here</span>
+    <input type="file" id="dluploader" onchange="angular.element(this).scope().setFiles()" class="upload box full-screen"/>
+  </span>
+</div>
+
+<div id="list-files" class="">
+  <ul>
+    <li ng-repeat="file in inputFiles" ng-if="file.message.type==warning">
+      <div class="filename"> {{ file.file.name }} </div>
+      <div class="file-progress">{{ file.progress }}%</div>
+      <i class="fa fa-check-circle" ng-if="file.progress === 100"></i>
+      <i class="fa fa-ban" ng-if="file.canceled"></i>
+      <div>{{ file.message.text }}</div>
+    </li>
+
+    <li>
+      <div class="buttons">
+        <button type="button" class="btn btn-warning pull-right" ng-click="resetUpload()">
+          <i class="fa fa-refresh"></i> reset
+        </button>
+        <button type="button" class="btn btn-danger pull-right" ng-click="abortUpload()">
+          <i class="fa fa-stop"></i> stop
+        </button>
+        <button type="button" class="btn btn-success pull-right" ng-click="startUpload()" ng-if="!autoupload">
+          <i class="fa fa-play"></i> upload
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="full-screen-layer" ng-if="showFullScreen">
+  <img src="images/upload.png" alt="Upload file"/>
+    <i class="fa fa-cloud-upload fa-3x"></i>
+</div>

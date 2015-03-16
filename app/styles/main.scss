@@ -1,0 +1,199 @@
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+//$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import "font-awesome/scss/font-awesome";
+
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
+/* DLuploader css */
+
+div.full-screen-layer {
+  position: absolute;
+  background: #333333 !important;
+  opacity: 0.5;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  cursor: default !important;
+  height: 100%;
+  width: 100%;
+  img {
+    margin: 0 -50% 0 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed #D5D5D5;
+  border-radius: 10px;
+  &.active {
+    background-color: #cdcdcd;
+  }
+  i {
+    float: left;
+    &:hover {
+      cursor: pointer;
+      color: #005fb3;
+    }
+  }
+  span {
+    padding: 4px;
+    float: left;
+  }
+  input.upload {
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    font-size: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+dluploader {
+  float: left;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  .buttons {
+    margin-top: 20px;
+  }
+  input {
+    cursor: pointer;
+  }
+  div#list-files {
+    ul {
+      list-style: none;
+      > li {
+        list-style: none;
+        width: 100%;
+        display: block;
+        float: left;
+      }
+    }
+    div.filename{
+      font-size: 16px;
+      width: 90%;
+      float: left;
+    }
+    div.file-progress{
+      font-size: 12px;
+      float: left;
+      padding: 2px;
+      i {
+        color: #008000;
+      }
+    }
+    img.action{
+      float: left;
+    }
+  }
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+// Fade In fadeOut animation
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 10px 0px 0px 30px;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #cccccc;
+}
